@@ -10,5 +10,30 @@ services:
       - docker-entrypoint.sh
       - solr-precreate
       - workshop
+
+  db:
+    image: mysql/mysql-server:5.5
+    ports:
+      - "3306:3306"
+    networks:
+      mysql_solr:
+        ipv4_address: 172.168.1.10
+    environment:
+      MS_UID: ${UID}
+      MS_GID: ${UID}
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "sample"
+      MYSQL_USER: "solr_workshop"
+      MYSQL_PASSWORD: "solr_workshop"
+    volumes:
+      - ./db/mysql:/var/lib/mysql:rw
 volumes:
   data:
+
+networks:
+  mysql_solr:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.168.1.0/24

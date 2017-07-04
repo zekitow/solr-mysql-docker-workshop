@@ -6,8 +6,8 @@
   docker-compose up
 ```
 
-2. Create a new core
+2. Visit the solr admin
 
 ```
-  docker run -d -P solr solr-create -c workshop
+  http://localhost:8983/
 ```
