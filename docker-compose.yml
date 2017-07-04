@@ -12,7 +12,7 @@ services:
       - workshop
 
   db:
-    image: mysql/mysql-server:5.5
+    image: mysql/mysql-server:5.7
     ports:
       - "3306:3306"
     networks:

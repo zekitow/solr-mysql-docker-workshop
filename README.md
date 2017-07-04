@@ -1,13 +1,13 @@
 # Solr Workshop - Hands on!
 
-1. Install via docker
+* Install via docker
 
 ```
   docker-compose up
 ```
 
-2. Visit the solr admin
+* Load the dump into mysql container
 
 ```
-  http://localhost:8983/
+  docker exec -i solrmysqldockerworkshop_db_1 mysql -usolr_workshop -psolr_workshop sample < db/resources/schema.sql
 ```
