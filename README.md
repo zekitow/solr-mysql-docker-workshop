@@ -11,3 +11,4 @@
 ```
   docker exec -i solrmysqldockerworkshop_db_1 mysql -usolr_workshop -psolr_workshop sample < db/resources/schema.sql
 ```
+
